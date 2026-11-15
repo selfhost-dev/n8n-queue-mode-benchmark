@@ -1,0 +1,154 @@
+setup: q20 q50
+
+######## kill-worker: SIGKILL worker-1 while it runs Wait-50s executions  (11:22:30)
+200 200 200 200 
+--- before kill:
+running=4
+killed at 11:22:39
+--- worker-1 state after kill: exited exit=137 restarts=0
+--- 10 s after kill:
+running=4
+--- 95 s after kill (worker-2 running, worker-1 as restart policy left it):
+running=4
+--- worker-1 state: exited restarts=0
+4 Q50 wait 50s running started=2026-11-15T11:22:31.618Z stopped=-
+3 Q50 wait 50s running started=2026-11-15T11:22:31.618Z stopped=-
+2 Q50 wait 50s running started=2026-11-15T11:22:31.617Z stopped=-
+1 Q50 wait 50s running started=2026-11-15T11:22:31.513Z stopped=-
+--- main log (stalled/crashed/recovered lines):
+Starting migration AddSourceExecutionToAgentBackgroundJob1792584485669
+Finished migration AddSourceExecutionToAgentBackgroundJob1792584485669
+Starting migration AddPlanTaskToAgentBackgroundJob1792584485671
+Finished migration AddPlanTaskToAgentBackgroundJob1792584485671
+Starting migration ResetAgentPlansForJobStatus1793353273511
+Finished migration ResetAgentPlansForJobStatus1793353273511
+Starting migration AddFilesToAgentBackgroundJob1793362577724
+Finished migration AddFilesToAgentBackgroundJob1793362577724
+Starting migration AddLastDispatchedAtToScheduledJob1793603668718
+Finished migration AddLastDispatchedAtToScheduledJob1793603668718
+ - N8N_UNVERIFIED_PACKAGES_ENABLED -> The default for this variable will change to `false` in a future version. Set it to `true` explicitly to keep installing unverified community packages.
+Enqueued execution 1 (job 1)
+Enqueued execution 2 (job 2)
+Enqueued execution 3 (job 3)
+Enqueued execution 4 (job 4)
+--- worker-2 log:
+[license SDK] Skipping renewal on init: license cert is not initialized
+Instance registered
+Cluster aligned on version 2.47.7
+Discovered 4 cluster checks
+n8n worker server listening on port 5678
+n8n worker is now ready
+ * Version: 2.47.7
+ * Concurrency: 10
+ * Pool: (default)
+ * Queue: jobs
+Registered runner "launcher-javascript" (3d8c242939495bbd) 
+Registered runner "launcher-python" (7fd4e6c3f6c31c96) 
+
+######## graceful: docker stop (SIGTERM, compose stop_grace_period 60s, N8N_GRACEFUL_SHUTDOWN_TIMEOUT default 30s) while worker-1 runs a 20 s and a 50 s wait  (11:24:15)
+200 200 
+200 200 
+--- before stop:
+running=2
+crashed=4 running=2
+worker-1 stop took 33 s
+--- right after stop:
+Q20: success=2
+Q50: crashed=4 running=2
+--- worker-1 log tail:
+Waiting for 2 active executions to finish... (execution IDs: 7, 8)
+process exited after 30s
+Shutdown timed out after 30 seconds
+Shutdown timed out after 30 seconds
+Error: Shutdown timed out after 30 seconds
+    at Worker.exitWithCrash (/usr/local/lib/node_modules/n8n/src/commands/base-command.ts:369:28)
+    at Timeout._onTimeout (/usr/local/lib/node_modules/n8n/src/commands/base-command.ts:614:16)
+    at listOnTimeout (node:internal/timers:685:17)
+    at processTimers (node:internal/timers:618:7)
+Shutdown timed out after 30 seconds
+Error: Shutdown timed out after 30 seconds
+    at Timeout._onTimeout (/usr/local/lib/node_modules/n8n/src/commands/base-command.ts:614:40)
+    at listOnTimeout (node:internal/timers:685:17)
+    at processTimers (node:internal/timers:618:7)
+Waiting for 2 active executions to finish... (execution IDs: 7, 8)
+--- 75 s later (worker-2 up):
+Q20: success=2
+Q50: crashed=4 running=2
+
+######## redis-aof: kill Redis (SIGKILL) with jobs waiting, AOF=yes  (11:26:38)
+setup: q20
+200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 
+--- waiting in Redis before kill: 20
+redis killed at 11:27:11
+--- webhooks while Redis is down:
+000 000 000 
+  +5s main: running exit=0 restarts=1
+  +10s main: running exit=0 restarts=1
+  +15s main: running exit=0 restarts=1
+  +20s main: running exit=0 restarts=1
+--- main log:
+ 107 [Redis client] getaddrinfo ENOTFOUND n8n-redis
+  19 Queue errored
+  19 getaddrinfo ENOTFOUND n8n-redis
+  19 Error: getaddrinfo ENOTFOUND n8n-redis
+   1 Unable to connect to Redis after trying to connect for 10s
+   1 Starting migration CreateAgentMessageQueue1790241069212
+   1 Starting migration CrashStaleEnqueuedExecutions1785247194306
+   1 Starting migration AddAgentQueueMessageReferences1790605116208
+--- redis back after 0 s; waiting jobs after restart: 20
+--- main ready again 4 s after Redis started; main: running restarts=1
+--- webhooks after Redis is back:
+200 200 200 
+--- statuses before the worker returns: new=23
+--- Q20 executions 60 s after the worker came back: running=3 success=20
+
+######## redis-noaof: kill Redis (SIGKILL) with jobs waiting, AOF=no  (11:28:57)
+setup: q20
+200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 
+--- waiting in Redis before kill: 20
+redis killed at 11:29:30
+--- webhooks while Redis is down:
+000 000 000 
+  +5s main: running exit=0 restarts=1
+  +10s main: running exit=0 restarts=1
+  +15s main: running exit=0 restarts=1
+  +20s main: running exit=0 restarts=1
+--- main log:
+ 107 [Redis client] getaddrinfo ENOTFOUND n8n-redis
+  19 Queue errored
+  19 getaddrinfo ENOTFOUND n8n-redis
+  19 Error: getaddrinfo ENOTFOUND n8n-redis
+   1 Unable to connect to Redis after trying to connect for 10s
+   1 Starting migration CreateAgentMessageQueue1790241069212
+   1 Starting migration CrashStaleEnqueuedExecutions1785247194306
+   1 Starting migration AddAgentQueueMessageReferences1790605116208
+--- redis back after 0 s; waiting jobs after restart: 0
+--- main ready again 3 s after Redis started; main: running restarts=1
+--- webhooks after Redis is back:
+200 200 200 
+--- statuses before the worker returns: crashed=20 new=3
+--- Q20 executions 60 s after the worker came back: crashed=20 success=3
+
+######## postgres: restart Postgres during load (k6, 4 req/s of q20-onReceived + q1, 90 s)  (11:31:16)
+setup: q1 q20
+postgres restarted (took 0 s) at 11:32:15
+main readiness back 2 s after the restart began
+--- k6: {"reqs":361,"ok":351,"failed":10,"p95":658.653}
+   9 non-200: status=503 error= body={"code":503,"message":"Database is not ready!"}" source=console
+   1 non-200: status=0 error=request timeout body=null" source=console
+--- n8n-main:
+   2 Postgres pool client error: terminating connection due to administrator command
+   1 Starting migration ReplacePromotionConnectionsWithEnvironments1792417570699
+   1 Starting migration PurgeInvalidWorkflowConnections1675940580449
+   1 Starting migration MoveSshKeysToDatabase1711390882123
+   1 Starting migration ModifyWorkflowHistoryNodesAndConnections1695829275184
+   1 Starting migration DropGitConnectionTables1788780616817
+--- n8n-worker-1:
+   2 Postgres pool client error: terminating connection due to administrator command
+   1 n8n worker is now ready
+   1 n8n Task Broker ready on 0.0.0.0, port 5679
+   1 Database connection recovered
+   1 Acquiring database migration lock...
+--- workers still serving after: 200
+
+drills done 11:33:37

@@ -1,0 +1,9 @@
+label=q4-r50
+workflow=q1
+base_url=http://SERVER_IP:5705
+scenario_start=1794325249
+started_utc=2026-11-10T15:54:31Z
+k6_args=-e MODE=rate -e RATE=50 -e DURATION=3m -e MAX_VUS=1000
+load_start=1794326092
+load_end=1794326304
+ended_utc=2026-11-10T15:59:04Z

@@ -1,0 +1,24 @@
+time="2026-11-11T11:35:02+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5705/webhook/q1\": EOF"
+time="2026-11-11T11:35:02+05:30" level=info msg="non-200: status=0 error=EOF body=null" source=console
+
+     ✗ status 200
+      ↳  99% — ✓ 900 / ✗ 1
+
+     checks.........................: 99.88% ✓ 900     ✗ 1   
+     data_received..................: 479 kB 2.6 kB/s
+     data_sent......................: 135 kB 746 B/s
+     http_req_blocked...............: min=4µs      med=158.19ms avg=155.8ms  p(90)=161.85ms p(95)=163.09ms p(99)=165.69ms max=193.72ms
+     http_req_connecting............: min=0s       med=157.98ms avg=155.63ms p(90)=161.66ms p(95)=162.89ms p(99)=165.31ms max=193.61ms
+     http_req_duration..............: min=32.42ms  med=916.21ms avg=1.01s    p(90)=952.61ms p(95)=1.02s    p(99)=4.39s    max=5.96s   
+       { expected_response:true }...: min=888.47ms med=916.21ms avg=1.01s    p(90)=952.74ms p(95)=1.02s    p(99)=4.39s    max=5.96s   
+     http_req_failed................: 0.11%  ✓ 1       ✗ 900 
+     http_req_receiving.............: min=0s       med=126µs    avg=210.85µs p(90)=333µs    p(95)=520µs    p(99)=1.67ms   max=12.29ms 
+     http_req_sending...............: min=20µs     med=115µs    avg=184.27µs p(90)=350µs    p(95)=481µs    p(99)=1.11ms   max=5.3ms   
+     http_req_tls_handshaking.......: min=0s       med=0s       avg=0s       p(90)=0s       p(95)=0s       p(99)=0s       max=0s      
+     http_req_waiting...............: min=32.34ms  med=915.85ms avg=1.01s    p(90)=952.33ms p(95)=1.02s    p(99)=4.39s    max=5.96s   
+     http_reqs......................: 901    4.97502/s
+     iteration_duration.............: min=34.04ms  med=1.07s    avg=1.16s    p(90)=1.11s    p(95)=1.16s    p(99)=4.54s    max=6.11s   
+     iterations.....................: 901    4.97502/s
+     vus............................: 50     min=50    max=50
+     vus_max........................: 50     min=50    max=50
+

@@ -1,0 +1,25 @@
+== drill 1: SIGKILL worker-1 with 4 x Wait-50s
+running on: 2 started on worker-1
+ Container qkf-n8n-worker-1-1 Killing 
+ Container qkf-n8n-worker-1-1 Killed 
++1s running=4
++11s running=4
++21s crashed=2 running=2
++31s crashed=2 running=2
++41s crashed=2 running=2
++51s crashed=2 running=2
++61s crashed=2 running=2
++72s crashed=2 running=2
++82s crashed=2 running=2
++92s crashed=2 running=2
++102s crashed=2 running=2
++112s crashed=4
+--- main log:
+   2 Marked executions as `crashed`
+   1 This execution failed to be processed too many times and will no longer retry. To allow this execution to complete, please break down your workflow or scale up your workers or adjust your worker settings. (execution 4)
+   1 This execution failed to be processed too many times and will no longer retry. To allow this execution to complete, please break down your workflow or scale up your workers or adjust your worker settings. (execution 2)
+   1 Starting migration CrashStaleEnqueuedExecutions1785247194306
+   1 Starting migration ChangeInstalledNodeVersionType1785162364000
+   1 Problem with execution 4: This execution failed to be processed too many times and will no longer retry. To allow this execution to complete, please break down your workflow or scale up your workers or adjust your worker settings.. Aborting.
+   1 Problem with execution 2: This execution failed to be processed too many times and will no longer retry. To allow this execution to complete, please break down your workflow or scale up your workers or adjust your worker settings.. Aborting.
+   1 job stalled more than maxStalledCount (execution 4)

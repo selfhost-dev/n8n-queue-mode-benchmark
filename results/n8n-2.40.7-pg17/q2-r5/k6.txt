@@ -1,0 +1,26 @@
+time="2026-11-11T11:15:56+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5704/webhook/q1\": EOF"
+time="2026-11-11T11:15:56+05:30" level=info msg="non-200: status=0 error=EOF body=null" source=console
+time="2026-11-11T11:15:57+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5704/webhook/q1\": EOF"
+time="2026-11-11T11:15:57+05:30" level=info msg="non-200: status=0 error=EOF body=null" source=console
+
+     ✗ status 200
+      ↳  99% — ✓ 899 / ✗ 2
+
+     checks.........................: 99.77% ✓ 899      ✗ 2   
+     data_received..................: 478 kB 2.6 kB/s
+     data_sent......................: 135 kB 746 B/s
+     http_req_blocked...............: min=4µs      med=158.73ms avg=160.8ms  p(90)=163.64ms p(95)=182.12ms p(99)=239.94ms max=279.1ms 
+     http_req_connecting............: min=0s       med=158.53ms avg=160.6ms  p(90)=163.22ms p(95)=181.44ms p(99)=239.78ms max=278.89ms
+     http_req_duration..............: min=53.27ms  med=914.94ms avg=980.03ms p(90)=962.62ms p(95)=1.04s    p(99)=3.26s    max=4.62s   
+       { expected_response:true }...: min=885.68ms med=915.12ms avg=982.09ms p(90)=962.94ms p(95)=1.04s    p(99)=3.26s    max=4.62s   
+     http_req_failed................: 0.22%  ✓ 2        ✗ 899 
+     http_req_receiving.............: min=0s       med=128µs    avg=182.77µs p(90)=312µs    p(95)=419µs    p(99)=994µs    max=2.04ms  
+     http_req_sending...............: min=25µs     med=128µs    avg=209.05µs p(90)=401µs    p(95)=543µs    p(99)=996µs    max=1.68ms  
+     http_req_tls_handshaking.......: min=0s       med=0s       avg=0s       p(90)=0s       p(95)=0s       p(99)=0s       max=0s      
+     http_req_waiting...............: min=53.24ms  med=914.69ms avg=979.64ms p(90)=962.2ms  p(95)=1.04s    p(99)=3.26s    max=4.62s   
+     http_reqs......................: 901    4.976284/s
+     iteration_duration.............: min=53.8ms   med=1.07s    avg=1.14s    p(90)=1.14s    p(95)=1.21s    p(99)=3.42s    max=4.78s   
+     iterations.....................: 901    4.976284/s
+     vus............................: 50     min=50     max=50
+     vus_max........................: 50     min=50     max=50
+

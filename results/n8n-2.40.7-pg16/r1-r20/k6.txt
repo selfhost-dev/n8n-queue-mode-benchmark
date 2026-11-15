@@ -1,0 +1,64 @@
+time="2026-11-10T20:20:41+05:30" level=warning msg="Insufficient VUs, reached 1000 active VUs and cannot initialize more" executor=constant-arrival-rate scenario=load
+time="2026-11-10T20:21:56+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:56+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:56+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:56+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:56+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:56+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:56+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:56+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:56+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:56+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:56+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:56+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:56+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:56+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:56+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:56+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:56+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:56+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:56+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:56+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:57+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:57+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:57+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:57+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:57+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:57+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:57+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:57+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:57+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:57+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:57+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:57+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:57+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:57+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:57+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:57+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:57+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:57+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+time="2026-11-10T20:21:57+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": request timeout"
+time="2026-11-10T20:21:57+05:30" level=info msg="non-200: status=0 error=request timeout body=null" source=console
+
+     ✗ status 200
+      ↳  98% — ✓ 1144 / ✗ 20
+
+     checks.........................: 98.28% ✓ 1144     ✗ 20    
+     data_received..................: 609 kB 2.9 kB/s
+     data_sent......................: 297 kB 1.4 kB/s
+     dropped_iterations.............: 1620   7.712871/s
+     http_req_blocked...............: min=1µs   med=157.87ms avg=96.96ms  p(90)=163.19ms p(95)=164.96ms p(99)=193.59ms max=708.57ms
+     http_req_connecting............: min=0s    med=157.75ms avg=96.86ms  p(90)=162.93ms p(95)=164.78ms p(99)=193.43ms max=708.52ms
+     http_req_duration..............: min=4.06s med=1m4s     avg=1m3s     p(90)=1m50s    p(95)=1m56s    p(99)=1m59s    max=2m0s    
+       { expected_response:true }...: min=4.06s med=1m3s     avg=1m2s     p(90)=1m48s    p(95)=1m54s    p(99)=1m58s    max=1m59s   
+     http_req_failed................: 1.71%  ✓ 20       ✗ 1144  
+     http_req_receiving.............: min=0s    med=116.5µs  avg=163.95µs p(90)=325µs    p(95)=427.85µs p(99)=778.89µs max=4.03ms  
+     http_req_sending...............: min=7µs   med=70µs     avg=108.8µs  p(90)=255µs    p(95)=306.84µs p(99)=526.74µs max=1.03ms  
+     http_req_tls_handshaking.......: min=0s    med=0s       avg=0s       p(90)=0s       p(95)=0s       p(99)=0s       max=0s      
+     http_req_waiting...............: min=4.06s med=1m4s     avg=1m3s     p(90)=1m50s    p(95)=1m56s    p(99)=1m59s    max=2m0s    
+     http_reqs......................: 1164   5.541841/s
+     iteration_duration.............: min=4.22s med=1m4s     avg=1m3s     p(90)=1m50s    p(95)=1m56s    p(99)=2m0s     max=2m0s    
+     iterations.....................: 1164   5.541841/s
+     vus............................: 1000   min=50     max=1000
+     vus_max........................: 1000   min=50     max=1000
+

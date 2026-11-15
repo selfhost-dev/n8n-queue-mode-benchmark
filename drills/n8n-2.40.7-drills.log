@@ -1,0 +1,251 @@
+
+######## start-order: worker started before main ever ran (fresh DB: no migrations yet)  (04:19:23)
+--- worker-1 log:
+Starting migration AddAgentExecutionAuthorAndMessagesResourceThreadIndex1789121244489
+Finished migration AddAgentExecutionAuthorAndMessagesResourceThreadIndex1789121244489
+Starting migration AddInstanceAiThreadHistoryIndex1789131391410
+Finished migration AddInstanceAiThreadHistoryIndex1789131391410
+n8n Task Broker ready on 0.0.0.0, port 5679
+There are deprecations related to your n8n setup. Please take the recommended actions to update your configuration:
+ - N8N_UNVERIFIED_PACKAGES_ENABLED -> The default for this variable will change to `false` in a future version. Set it to `true` explicitly to keep installing unverified community packages.
+ - N8N_RUNNERS_TASK_TIMEOUT -> The default for this variable will be reduced from 300 (5 minutes) to 60 (1 minute) in a future version. Set it explicitly to keep your current task timeout.
+ - N8N_COMPRESSION_NODE_MAX_DECOMPRESSED_SIZE_BYTES -> The default for this variable will be reduced from 2 GiB to 256 MiB in a future version. Set it explicitly to keep your current limit.
+ - N8N_COMPRESSION_NODE_MAX_ZIP_ENTRIES -> The default for this variable will be reduced from 5000 to 1000 in a future version. Set it explicitly to keep your current limit.
+[license SDK] Skipping renewal on init: renewOnInit is disabled in config
+[license SDK] Skipping renewal on init: license cert is not initialized
+Instance registered
+Discovered 4 cluster checks
+n8n worker server listening on port 5678
+n8n worker is now ready
+ * Version: 2.40.7
+ * Concurrency: 10
+ * Pool: (default)
+ * Queue: jobs
+--- worker-1 state: running restarts=0
+setup: q20 q50
+
+######## kill-worker: SIGKILL worker-1 while it runs Wait-50s executions  (04:20:27)
+200 200 200 200 
+--- before kill:
+running=4
+killed at 04:20:37
+--- worker-1 state after kill: exited exit=137 restarts=0
+--- 10 s after kill:
+running=4
+--- 95 s after kill (worker-2 running, worker-1 as restart policy left it):
+error=4
+--- worker-1 state: exited restarts=0
+3 Q50 wait 50s error started=2026-11-11T04:20:29.386Z stopped=2026-11-11T04:21:48.004Z
+4 Q50 wait 50s error started=2026-11-11T04:20:29.383Z stopped=2026-11-11T04:21:48.004Z
+2 Q50 wait 50s error started=2026-11-11T04:20:29.381Z stopped=2026-11-11T04:21:47.996Z
+1 Q50 wait 50s error started=2026-11-11T04:20:29.237Z stopped=2026-11-11T04:21:48.002Z
+--- main log (stalled/crashed/recovered lines):
+Problem with execution 2: This execution failed to be processed too many times and will no longer retry. To allow this execution to complete, please break down your workflow or scale up your workers or adjust your worker settings.. Aborting.
+This execution failed to be processed too many times and will no longer retry. To allow this execution to complete, please break down your workflow or scale up your workers or adjust your worker settings. (execution 2)
+Error: job stalled more than maxStalledCount (execution 2)
+Error: Error: job stalled more than maxStalledCount
+    at Queue.onFailed (/usr/local/lib/node_modules/n8n/node_modules/.pnpm/bull@4.16.4_patch_hash=a4b6d56db16fe5870646929938466d6a5c668435fd1551bed6a93fffb597ba42_supports-color@8.1.1/node_modules/bull/lib/job.js:523:18)
+Problem with execution 3: This execution failed to be processed too many times and will no longer retry. To allow this execution to complete, please break down your workflow or scale up your workers or adjust your worker settings.. Aborting.
+This execution failed to be processed too many times and will no longer retry. To allow this execution to complete, please break down your workflow or scale up your workers or adjust your worker settings. (execution 3)
+Error: job stalled more than maxStalledCount (execution 3)
+Error: Error: job stalled more than maxStalledCount
+    at Queue.onFailed (/usr/local/lib/node_modules/n8n/node_modules/.pnpm/bull@4.16.4_patch_hash=a4b6d56db16fe5870646929938466d6a5c668435fd1551bed6a93fffb597ba42_supports-color@8.1.1/node_modules/bull/lib/job.js:523:18)
+Problem with execution 4: This execution failed to be processed too many times and will no longer retry. To allow this execution to complete, please break down your workflow or scale up your workers or adjust your worker settings.. Aborting.
+This execution failed to be processed too many times and will no longer retry. To allow this execution to complete, please break down your workflow or scale up your workers or adjust your worker settings. (execution 4)
+Error: job stalled more than maxStalledCount (execution 4)
+Error: Error: job stalled more than maxStalledCount
+    at Queue.onFailed (/usr/local/lib/node_modules/n8n/node_modules/.pnpm/bull@4.16.4_patch_hash=a4b6d56db16fe5870646929938466d6a5c668435fd1551bed6a93fffb597ba42_supports-color@8.1.1/node_modules/bull/lib/job.js:523:18)
+--- worker-2 log:
+[license SDK] Skipping renewal on init: renewOnInit is disabled in config
+[license SDK] Skipping renewal on init: license cert is not initialized
+Instance registered
+Discovered 4 cluster checks
+n8n worker server listening on port 5678
+n8n worker is now ready
+ * Version: 2.40.7
+ * Concurrency: 10
+ * Pool: (default)
+ * Queue: jobs
+Registered runner "launcher-javascript" (4fc40d9935b1cbe0) 
+Registered runner "launcher-python" (c92421824e61874b) 
+
+######## graceful: docker stop (SIGTERM, compose stop_grace_period 60s, N8N_GRACEFUL_SHUTDOWN_TIMEOUT default 30s) while worker-1 runs a 20 s and a 50 s wait  (04:22:16)
+200 200 
+200 200 
+--- before stop:
+running=2
+error=4 running=2
+worker-1 stop took 32 s
+--- right after stop:
+Q20: success=2
+Q50: error=4 running=2
+--- worker-1 log tail:
+Waiting for 2 active executions to finish... (execution IDs: 7, 8)
+process exited after 30s
+Shutdown timed out after 30 seconds
+Shutdown timed out after 30 seconds
+Error: Shutdown timed out after 30 seconds
+    at Worker.exitWithCrash (/usr/local/lib/node_modules/n8n/src/commands/base-command.ts:331:28)
+    at Timeout._onTimeout (/usr/local/lib/node_modules/n8n/src/commands/base-command.ts:558:16)
+    at listOnTimeout (node:internal/timers:685:17)
+    at processTimers (node:internal/timers:618:7)
+Shutdown timed out after 30 seconds
+Error: Shutdown timed out after 30 seconds
+    at Timeout._onTimeout (/usr/local/lib/node_modules/n8n/src/commands/base-command.ts:558:40)
+    at listOnTimeout (node:internal/timers:685:17)
+    at processTimers (node:internal/timers:618:7)
+Waiting for 2 active executions to finish... (execution IDs: 7, 8)
+--- 75 s later (worker-2 up):
+Q20: success=2
+Q50: error=6
+
+######## bad-key: worker-2 has a different N8N_ENCRYPTION_KEY  (04:24:38)
+NAME                   IMAGE                   COMMAND                  SERVICE           CREATED              STATUS                                     PORTS
+qd-n8n-main-1          n8nio/n8n:2.40.7        "tini -- /docker-ent…"   n8n-main          About a minute ago   Up 58 seconds (healthy)                    0.0.0.0:15680->5678/tcp, [::]:15680->5678/tcp
+qd-n8n-postgres-1      postgres:17.10-alpine   "docker-entrypoint.s…"   n8n-postgres      About a minute ago   Up About a minute (healthy)                5432/tcp
+qd-n8n-redis-1         redis:7.4.6-alpine      "docker-entrypoint.s…"   n8n-redis         About a minute ago   Up About a minute (healthy)                6379/tcp
+qd-n8n-worker-1-1      n8nio/n8n:2.40.7        "tini -- /docker-ent…"   n8n-worker-1      About a minute ago   Up 47 seconds (healthy)                    5678/tcp
+qd-n8n-worker-2-1      n8nio/n8n:2.40.7        "tini -- /docker-ent…"   n8n-worker-2      About a minute ago   Up Less than a second (health: starting)   5678/tcp
+qd-runner-main-1       n8nio/runners:2.40.7    "tini -- /usr/local/…"   runner-main       About a minute ago   Up 58 seconds (healthy)                    5680/tcp
+qd-runner-worker-1-1   n8nio/runners:2.40.7    "tini -- /usr/local/…"   runner-worker-1   About a minute ago   Up 47 seconds (healthy)                    5680/tcp
+qd-runner-worker-2-1   n8nio/runners:2.40.7    "tini -- /usr/local/…"   runner-worker-2   About a minute ago   Up 47 seconds (healthy)                    5680/tcp
+setup: q20
+credential V9zaHFhZ8eI0CfIT + qcred published
+{"status":"ok"} HTTP 200
+{"status":"ok"} HTTP 200
+{"status":"ok"} HTTP 200
+{"status":"ok"} HTTP 200
+{"status":"ok"} HTTP 200
+{"status":"ok"} HTTP 200
+{"status":"ok"} HTTP 200
+{"status":"ok"} HTTP 200
+--- statuses: success=8
+--- worker-2 (wrong key) log:
+   4     at DeploymentKeyRepository.findActiveSigningSecret (/usr/local/lib/node_modules/n8n/node_modules/.pnpm/@n8n+db@file++++home+runner+_work+n8n+n8n+packages+@n8n+db/node_modules/@n8n/db/src/repositories/deployment-key.repository.ts:61:11)
+   4 Deployment key 'signing.hmac' cannot be read with this instance encryption key
+   4 Error tracking disabled because this release is older than 6 weeks.
+   4 Error: Deployment key 'signing.hmac' cannot be read with this instance encryption key
+   4 Error: Worker exiting due to an error.
+   8 Worker exiting due to an error.
+
+######## redis-aof: kill Redis (SIGKILL) with jobs waiting, AOF=yes  (04:25:53)
+setup: q20
+200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 
+--- waiting in Redis before kill: 20
+redis killed at 04:26:27
+--- webhooks while Redis is down:
+000 000 000 
+  +5s main: running exit=0 restarts=1
+  +10s main: running exit=0 restarts=1
+  +15s main: running exit=0 restarts=1
+  +20s main: running exit=0 restarts=1
+--- main log:
+ 106 [Redis client] getaddrinfo ENOTFOUND n8n-redis
+  18 Queue errored
+  18 getaddrinfo ENOTFOUND n8n-redis
+  18 Error: getaddrinfo ENOTFOUND n8n-redis
+   1 Unable to connect to Redis after trying to connect for 10s
+   1 Starting migration CrashStaleEnqueuedExecutions1785247194306
+   1 Lost Redis connection. Trying to reconnect in 1s... (0s/10s)
+   1 Finished migration CrashStaleEnqueuedExecutions1785247194306
+--- redis back after 0 s; waiting jobs after restart: 20
+--- main ready again 4 s after Redis started; main: running restarts=1
+--- webhooks after Redis is back:
+200 200 200 
+--- statuses before the worker returns: new=23
+--- Q20 executions 60 s after the worker came back: running=3 success=20
+
+######## redis-noaof: kill Redis (SIGKILL) with jobs waiting, AOF=no  (04:28:14)
+setup: q20
+200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 200 
+--- waiting in Redis before kill: 20
+redis killed at 04:28:47
+--- webhooks while Redis is down:
+000 000 000 
+  +5s main: running exit=0 restarts=1
+  +10s main: running exit=0 restarts=1
+  +15s main: running exit=0 restarts=1
+  +20s main: running exit=0 restarts=1
+--- main log:
+ 107 [Redis client] getaddrinfo ENOTFOUND n8n-redis
+  19 Queue errored
+  19 getaddrinfo ENOTFOUND n8n-redis
+  19 Error: getaddrinfo ENOTFOUND n8n-redis
+   1 Unable to connect to Redis after trying to connect for 10s
+   1 Starting migration CrashStaleEnqueuedExecutions1785247194306
+   1 Lost Redis connection. Trying to reconnect in 1s... (9.2s/10s)
+   1 Lost Redis connection. Trying to reconnect in 1s... (6.1s/10s)
+--- redis back after 0 s; waiting jobs after restart: 0
+--- main ready again 4 s after Redis started; main: running restarts=1
+--- webhooks after Redis is back:
+200 200 200 
+--- statuses before the worker returns: crashed=20 new=3
+--- Q20 executions 60 s after the worker came back: crashed=20 success=3
+
+######## postgres: restart Postgres during load (k6, 4 req/s of q20-onReceived + q1, 90 s)  (04:30:34)
+setup: q1 q20
+postgres restarted (took 1 s) at 04:31:34
+main readiness back 3 s after the restart began
+--- k6: {"reqs":361,"ok":353,"failed":8,"p95":716.582}
+   7 non-200: status=503 error= body={"code":503,"message":"Database is not ready!"}" source=console
+   1 non-200: status=500 error= body={"message":"Error in workflow"}" source=console
+--- n8n-main:
+   2 Postgres pool client error: terminating connection due to administrator command
+   1 Starting migration PurgeInvalidWorkflowConnections1675940580449
+   1 Starting migration MoveSshKeysToDatabase1711390882123
+   1 Starting migration ModifyWorkflowHistoryNodesAndConnections1695829275184
+   1 Starting migration DropGitConnectionTables1788780616817
+   1 Starting migration CreateSecretsProviderConnectionTables1769433700000
+--- n8n-worker-1:
+   2 Postgres pool client error: terminating connection due to administrator command
+   1 n8n worker is now ready
+   1 n8n Task Broker ready on 0.0.0.0, port 5679
+   1 Database connection recovered
+   1 Acquiring database migration lock...
+--- workers still serving after: 200
+
+######## binary-fs: N8N_DEFAULT_BINARY_DATA_MODE=filesystem in queue mode, upload a 300 kB file  (04:32:53)
+created + published qbin (8QjYcbuWnK0lLAv0)
+created + published qbin2 (avdxq3bNq19ob3dL)
+--- main state: running restarts=0
+[license SDK] Skipping renewal on init: license cert is not initialized
+Instance registered
+Discovered 4 cluster checks
+Recorded version change: (none) -> 2.40.7
+Sandbox: enabled=false provider=n8n-sandbox (from env)
+Version: 2.40.7
+Building workflow dependency index...
+Editor is now accessible via:
+http://localhost:15680
+Finished building workflow dependency index. Processed 0 draft workflows, 0 published workflows.
+Skipped invalid MCP registry entries
+Owner was set up successfully
+--- activate response:
+{"data":{"updatedAt":"2026-11-11T04:33:21.662Z","createdAt":"2026-11-11T04:33:21.662Z","id":"8QjYcbuWnK0lLAv0","name":"QBIN binary","description":null,"active":true,"isArchived":false,"nodes":[{"name":"Webhook","type":"n8n-nodes-base.webhook","typeVersion":2.1,"position":[0,0],"webhookId":"qbin-0000-4000-8000-000000000000","parameters":{"httpMethod":"POST","path":"qbin","responseMode":"lastNode","options":{"binaryPropertyName":"data"}},"id":"5e96e706-6a8b-41d2-8a62-913fb4957556"},{"name":"Size","type":"n8n-nodes-base.set","typeVersion":3.4,"position":[220,0],"parameters":{"mode":"manual","opti
+{"keys":"data0","bytes":"300000","id":"filesystem-v2:workflows/8QjYcbuWnK0lLAv0/executions/temp/binary_data/fd4770ab-2730-4d36-bc9c-0b888a270384"} HTTP 200
+--- read the bytes on the worker (Code node, getBinaryDataBuffer):
+{"message":"Error in workflow"} HTTP 500
+--- execution 2:
+status: error | error: {"level":"info","shouldReport":false,"tags":{},"extra":{"filePath":"workflows/avdxq3bNq19ob3dL/executions/temp/binary_data/e059219d-32f4-4d38-b043-37585266ac47"}} |  | node: None
+  node Read bytes -> {"level":"info","shouldReport":false,"tags":{},"extra":{"filePath":"workflows/avdxq3bNq19ob3dL/executions/temp/binary_data/e059219d-32f4-4d38-b043-37585266ac47"}}
+
+######## binary (unset, for comparison)  (04:33:32)
+setup: qbin qbin2
+{"keys":"data0","bytes":"300000","id":"database:737d011c-5728-4fff-83f7-1053f075b50f"} HTTP 200
+{"key":"data0","id":"database:d542caaa-c4fa-45f4-ab6c-7e186cbf3e77","metaBytes":300000,"readBytes":300000} HTTP 200
+
+######## eviction: Redis maxmemory-policy allkeys-lru instead of noeviction  (04:34:07)
+setup: q20
+--- policy: maxmemory-policy allkeys-lru 
+--- n8n-main:
+   1 (node:7) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+   1 (Use `node --trace-deprecation ...` to show where the warning was created)
+   1 Finished migration AddCoalesceOwnerMisfirePolicy1786666615643
+   1 Finished migration AddMisfirePolicyToScheduler1785247194307
+   1 Finished migration CreateTypeAvailabilityPolicyTables1787841960965
+   1 Starting migration AddCoalesceOwnerMisfirePolicy1786666615643
+--- n8n-worker-1:
+--- n8n-redis:
+200 200 200 
+
+drills done 04:34:58

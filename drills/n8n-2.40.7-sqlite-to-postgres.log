@@ -1,0 +1,85 @@
+Error response from daemon: network with name qm-net already exists
+
+### 1. n8n on SQLite (default DB_TYPE), owner + credential + 2 workflows + executions  (04:34:59)
+owner + qslow created
+credential id: WIuE4OfY5vJ2ZVOW
+executions on SQLite: 3
+workflows on SQLite: 2
+
+### 2. stop n8n, export:entities (default: no execution history), then with --includeExecutionHistoryDataTables  (04:35:09)
+
+📊 Export Summary:
+   Tables processed: 102
+   Total entities exported: 1005
+   Output directory: /exports/default
+   Compressed archive: /exports/default/entities.zip
+✅ Task completed successfully! 
+
+   Compressed archive: /exports/with-history/entities.zip
+✅ Task completed successfully! 
+
+files (default):
+entities.zip
+execution files (default): 0  (with-history): 0
+176K	<tmp>/exports/default
+184K	<tmp>/exports/with-history
+
+### 3. Postgres, and the wrong DB_TYPE=postgres first  (04:35:15)
+--- DB_TYPE=postgres (wrong value):
+Invalid value for DB_TYPE - Invalid enum value. Expected 'sqlite' | 'postgresdb', received 'postgres'. Falling back to default value.
+Initializing n8n process
+Error tracking disabled because this release is older than 6 weeks.
+n8n ready on ::, port 5678
+Migrations in progress, please do NOT stop the process.
+Starting migration InitialMigration1588102412422
+Finished migration InitialMigration1588102412422
+Starting migration WebhookModel1592445003908
+Finished migration WebhookModel1592445003908
+Starting migration CreateIndexStoppedAt1594825041918
+Finished migration CreateIndexStoppedAt1594825041918
+Starting migration MakeStoppedAtNullable1607431743769
+
+### 4. n8n on Postgres once (creates + migrates the schema), stop, import:entities --truncateTables  (04:35:21)
+fresh Postgres-backed n8n migrated
+   Removed: user.jsonl
+   Removed: webhookentity.jsonl
+   Removed: workflowdependency.jsonl
+   Removed: workflowentity.jsonl
+   Removed: workflowhistory.jsonl
+   Removed: workflowpublicationoutbox.jsonl
+   Removed: workflowpublicationtriggerstatus.jsonl
+   Removed: workflowpublishedversion.jsonl
+   Removed: workflowpublishhistory.jsonl
+   Removed: workflowstatistics.jsonl
+
+🗑️  Cleaned up decompressed files in /exports/with-history
+
+### 5. what moved  (04:35:39)
+login with the SQLite owner: bench@example.com
+workflows: [{"name":"QSLOW in flight","active":true},{"name":"QCRED uses a credential","active":true}]
+executions: 3
+credential decrypts (run the workflow that uses it):
+{"code":0,"message":"There was a problem executing the workflow"}  -> HTTP 500
+Starting migration CreateAgentCredentialDependencyTable1785828155092
+Finished migration CreateAgentCredentialDependencyTable1785828155092
+Error tracking disabled because this release is older than 6 weeks.
+QueryFailedError: duplicate key value violates unique constraint "pk_e3e63bbf986767844bbe1166d4e"
+Error in handling webhook request POST /webhook/qcred: There was a problem executing the workflow
+--- which constraint, and the id sequences vs max(id):
+execution_entity
+execution_entity max(id)=3 seq=1
+ERROR:  column "id" does not exist
+LINE 1: ...'execution_data max(id)=' || coalesce((select max(id)::text ...
+                                                             ^
+execution_metadata max(id)=- seq=(no sequence)
+--- fix: move the execution id sequence past the imported rows, then retry
+SELECT setval(pg_get_serial_sequence('execution_entity', 'id'), (SELECT max(id) FROM execution_entity));
+3
+{"status":"ok"}  -> HTTP 200
+last execution: {"id":"4","status":"success","workflowName":"QCRED uses a credential"}
+
+### 6. same import with a DIFFERENT encryption key  (04:35:43)
+Error: Failed to load command "import:entities"
+Error: Mismatching encryption keys. The encryption key in the settings file /home/node/.n8n/config does not match the N8N_ENCRYPTION_KEY env var. Please make sure both keys match. More information: https://docs.n8n.io/hosting/environment-variables/configuration-methods/#encryption-key
+
+cleanup done

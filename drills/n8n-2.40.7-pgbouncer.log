@@ -1,0 +1,38 @@
+
+######## 1. start: migrations on first boot go through PgBouncer (transaction mode)  (04:35:46)
+n8n-main Up 21 seconds (healthy)
+n8n-pgbouncer Up 27 seconds (healthy)
+n8n-postgres Up 32 seconds (healthy)
+n8n-redis Up 32 seconds (healthy)
+n8n-worker-1 Up 10 seconds (healthy)
+n8n-worker-2 Up 10 seconds (healthy)
+runner-main Up 21 seconds (healthy)
+runner-worker-1 Up 10 seconds (healthy)
+runner-worker-2 Up 10 seconds (healthy)
+postgres (PostgreSQL) 17.10
+PgBouncer 1.24.1
+270 migrations applied
+--- n8n hosts point at: n8n-pgbouncer
+
+######## 2. owner + q1 + qslow, then 200 q1 webhooks, 20 at a time  (04:36:20)
+setup done
+ 200 200
+q1 executions: success=100
+
+######## 3. 10 qslow in flight, restart worker-1 mid-run (SIGTERM), wait for them to finish  (04:36:36)
+worker-1 restarted
+qslow executions: success=10
+
+######## 4. Postgres-side view and errors  (04:38:08)
+server connections from pgbouncer: 6
+--- n8n-main errors:
+   1 Starting migration AddErrorColumnsToTestRuns1737715421462
+   1 Finished migration AddErrorColumnsToTestRuns1737715421462
+   1 Error tracking disabled because this release is older than 6 weeks.
+--- n8n-worker-1 errors:
+   2 Error tracking disabled because this release is older than 6 weeks.
+--- n8n-worker-2 errors:
+   1 Error tracking disabled because this release is older than 6 weeks.
+--- pgbouncer warnings/errors:
+
+cleanup on exit

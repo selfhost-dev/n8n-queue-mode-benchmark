@@ -1,0 +1,9 @@
+label=q2c20-r20
+workflow=q1
+base_url=http://SERVER_IP:5708
+scenario_start=1794328204
+started_utc=2026-11-10T16:34:43Z
+k6_args=-e MODE=rate -e RATE=20 -e DURATION=3m -e MAX_VUS=1000
+load_start=1794328504
+load_end=1794328716
+ended_utc=2026-11-10T16:39:15Z

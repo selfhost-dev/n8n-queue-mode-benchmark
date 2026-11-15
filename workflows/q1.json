@@ -1,0 +1,114 @@
+{
+  "name": "Q1 cpu + wait",
+  "nodes": [
+    {
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "q1-0000-4000-8000-000000000000",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "q1",
+        "responseMode": "lastNode",
+        "options": {}
+      }
+    },
+    {
+      "name": "CPU work",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "jsCode": "// Fixed CPU work, the same every run: an integer hash loop.\nlet h = 0;\nfor (let i = 0; i < 20000000; i++) { h = (h * 31 + i) % 1000003; }\nreturn [{ json: { h } }];\n"
+      }
+    },
+    {
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        440,
+        0
+      ],
+      "webhookId": "wait-440-0000-4000-8000-000000000000",
+      "parameters": {
+        "amount": 0.5,
+        "unit": "seconds"
+      }
+    },
+    {
+      "name": "Done",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        660,
+        0
+      ],
+      "parameters": {
+        "mode": "manual",
+        "options": {},
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f0",
+              "name": "ok",
+              "value": true,
+              "type": "boolean"
+            },
+            {
+              "id": "f1",
+              "name": "h",
+              "value": "={{ $('CPU work').item.json.h }}",
+              "type": "number"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "CPU work",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CPU work": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Done",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

@@ -1,0 +1,26 @@
+time="2026-11-11T10:33:57+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": EOF"
+time="2026-11-11T10:33:57+05:30" level=info msg="non-200: status=0 error=EOF body=null" source=console
+time="2026-11-11T10:33:58+05:30" level=warning msg="Request Failed" error="Post \"http://SERVER_IP:5702/webhook/q1\": EOF"
+time="2026-11-11T10:33:58+05:30" level=info msg="non-200: status=0 error=EOF body=null" source=console
+
+     ✗ status 200
+      ↳  99% — ✓ 899 / ✗ 2
+
+     checks.........................: 99.77% ✓ 899     ✗ 2   
+     data_received..................: 478 kB 2.6 kB/s
+     data_sent......................: 135 kB 747 B/s
+     http_req_blocked...............: min=19µs     med=160.26ms avg=160.16ms p(90)=163.84ms p(95)=165.49ms p(99)=170.52ms max=206.27ms
+     http_req_connecting............: min=0s       med=160.05ms avg=159.97ms p(90)=163.6ms  p(95)=165.05ms p(99)=170.3ms  max=206.06ms
+     http_req_duration..............: min=31.21ms  med=889.53ms avg=1.01s    p(90)=983.39ms p(95)=2.26s    p(99)=3.33s    max=3.92s   
+       { expected_response:true }...: min=866.57ms med=889.53ms avg=1.02s    p(90)=983.88ms p(95)=2.26s    p(99)=3.33s    max=3.92s   
+     http_req_failed................: 0.22%  ✓ 2       ✗ 899 
+     http_req_receiving.............: min=0s       med=115µs    avg=169µs    p(90)=289µs    p(95)=409µs    p(99)=746µs    max=3.57ms  
+     http_req_sending...............: min=34µs     med=136µs    avg=237.61µs p(90)=451µs    p(95)=715µs    p(99)=1.12ms   max=4.01ms  
+     http_req_tls_handshaking.......: min=0s       med=0s       avg=0s       p(90)=0s       p(95)=0s       p(99)=0s       max=0s      
+     http_req_waiting...............: min=31.15ms  med=889.19ms avg=1.01s    p(90)=983.19ms p(95)=2.26s    p(99)=3.33s    max=3.92s   
+     http_reqs......................: 901    4.97666/s
+     iteration_duration.............: min=34.38ms  med=1.05s    avg=1.18s    p(90)=1.14s    p(95)=2.42s    p(99)=3.49s    max=4.08s   
+     iterations.....................: 901    4.97666/s
+     vus............................: 50     min=50    max=50
+     vus_max........................: 50     min=50    max=50
+

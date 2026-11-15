@@ -1,0 +1,74 @@
+{
+  "name": "QBIN binary",
+  "nodes": [
+    {
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "qbin-0000-4000-8000-000000000000",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "qbin",
+        "responseMode": "lastNode",
+        "options": {
+          "binaryPropertyName": "data"
+        }
+      }
+    },
+    {
+      "name": "Size",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "mode": "manual",
+        "options": {},
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f0",
+              "name": "keys",
+              "value": "={{ Object.keys($binary || {}).join(',') }}",
+              "type": "string"
+            },
+            {
+              "id": "f1",
+              "name": "bytes",
+              "value": "={{ Object.values($binary || {})[0]?.bytes ?? 'no binary' }}",
+              "type": "string"
+            },
+            {
+              "id": "f2",
+              "name": "id",
+              "value": "={{ Object.values($binary || {})[0]?.id ?? '' }}",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Size",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

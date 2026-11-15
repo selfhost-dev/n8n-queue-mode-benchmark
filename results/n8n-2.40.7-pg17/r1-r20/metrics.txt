@@ -1,0 +1,417 @@
+# HELP n8n_expression_evaluation_duration_seconds Duration of VM-based expression evaluation in seconds.
+# TYPE n8n_expression_evaluation_duration_seconds histogram
+n8n_expression_evaluation_duration_seconds_bucket{le="0.0001",status="success",type="none"} 0
+n8n_expression_evaluation_duration_seconds_bucket{le="0.0005",status="success",type="none"} 0
+n8n_expression_evaluation_duration_seconds_bucket{le="0.001",status="success",type="none"} 0
+n8n_expression_evaluation_duration_seconds_bucket{le="0.005",status="success",type="none"} 889
+n8n_expression_evaluation_duration_seconds_bucket{le="0.01",status="success",type="none"} 2162
+n8n_expression_evaluation_duration_seconds_bucket{le="0.025",status="success",type="none"} 2238
+n8n_expression_evaluation_duration_seconds_bucket{le="0.05",status="success",type="none"} 2244
+n8n_expression_evaluation_duration_seconds_bucket{le="0.1",status="success",type="none"} 2244
+n8n_expression_evaluation_duration_seconds_bucket{le="0.25",status="success",type="none"} 2244
+n8n_expression_evaluation_duration_seconds_bucket{le="0.5",status="success",type="none"} 2244
+n8n_expression_evaluation_duration_seconds_bucket{le="1",status="success",type="none"} 2244
+n8n_expression_evaluation_duration_seconds_bucket{le="5",status="success",type="none"} 2244
+n8n_expression_evaluation_duration_seconds_bucket{le="+Inf",status="success",type="none"} 2244
+n8n_expression_evaluation_duration_seconds_sum{status="success",type="none"} 12.656274833997578
+n8n_expression_evaluation_duration_seconds_count{status="success",type="none"} 2244
+
+# HELP n8n_expression_code_cache_hit_total Expression code cache hits.
+# TYPE n8n_expression_code_cache_hit_total counter
+n8n_expression_code_cache_hit_total 2243
+
+# HELP n8n_expression_code_cache_miss_total Expression code cache misses.
+# TYPE n8n_expression_code_cache_miss_total counter
+n8n_expression_code_cache_miss_total 1
+
+# HELP n8n_expression_code_cache_eviction_total Expression code cache evictions.
+# TYPE n8n_expression_code_cache_eviction_total counter
+n8n_expression_code_cache_eviction_total 0
+
+# HELP n8n_expression_code_cache_size Current expression code cache size.
+# TYPE n8n_expression_code_cache_size gauge
+n8n_expression_code_cache_size 1
+
+# HELP n8n_expression_pool_acquired_total Bridges acquired from the expression pool.
+# TYPE n8n_expression_pool_acquired_total counter
+n8n_expression_pool_acquired_total 2255
+
+# HELP n8n_expression_pool_replenish_failed_total Failed pool bridge replenishments.
+# TYPE n8n_expression_pool_replenish_failed_total counter
+n8n_expression_pool_replenish_failed_total 0
+
+# HELP n8n_expression_pool_cold_start_sync_total Bridges built synchronously on the request path because the pool was exhausted during a lazy evaluation.
+# TYPE n8n_expression_pool_cold_start_sync_total counter
+n8n_expression_pool_cold_start_sync_total 0
+
+# HELP n8n_expression_pool_cold_start_sync_duration_seconds Duration of synchronous cold starts (event-loop blocking time) in seconds.
+# TYPE n8n_expression_pool_cold_start_sync_duration_seconds histogram
+n8n_expression_pool_cold_start_sync_duration_seconds_bucket{le="0.0001"} 0
+n8n_expression_pool_cold_start_sync_duration_seconds_bucket{le="0.0005"} 0
+n8n_expression_pool_cold_start_sync_duration_seconds_bucket{le="0.001"} 0
+n8n_expression_pool_cold_start_sync_duration_seconds_bucket{le="0.005"} 0
+n8n_expression_pool_cold_start_sync_duration_seconds_bucket{le="0.01"} 0
+n8n_expression_pool_cold_start_sync_duration_seconds_bucket{le="0.025"} 0
+n8n_expression_pool_cold_start_sync_duration_seconds_bucket{le="0.05"} 0
+n8n_expression_pool_cold_start_sync_duration_seconds_bucket{le="0.1"} 0
+n8n_expression_pool_cold_start_sync_duration_seconds_bucket{le="0.25"} 0
+n8n_expression_pool_cold_start_sync_duration_seconds_bucket{le="0.5"} 0
+n8n_expression_pool_cold_start_sync_duration_seconds_bucket{le="1"} 0
+n8n_expression_pool_cold_start_sync_duration_seconds_bucket{le="5"} 0
+n8n_expression_pool_cold_start_sync_duration_seconds_bucket{le="+Inf"} 0
+n8n_expression_pool_cold_start_sync_duration_seconds_sum 0
+n8n_expression_pool_cold_start_sync_duration_seconds_count 0
+
+# HELP n8n_expression_pool_scaled_up_total Expression pool scaled up from idle.
+# TYPE n8n_expression_pool_scaled_up_total counter
+n8n_expression_pool_scaled_up_total 0
+
+# HELP n8n_expression_pool_scaled_to_zero_total Expression pool scaled to zero after inactivity.
+# TYPE n8n_expression_pool_scaled_to_zero_total counter
+n8n_expression_pool_scaled_to_zero_total 0
+
+# HELP n8n_instance_role_leader Whether this main instance is the leader (1) or not (0).
+# TYPE n8n_instance_role_leader gauge
+n8n_instance_role_leader 1
+
+# HELP n8n_active_workflow_count Total number of active workflows.
+# TYPE n8n_active_workflow_count gauge
+n8n_active_workflow_count 1
+
+# HELP n8n_workflow_execution_duration_seconds Workflow execution duration in seconds.
+# TYPE n8n_workflow_execution_duration_seconds histogram
+n8n_workflow_execution_duration_seconds_bucket{le="0.005",status="success",mode="webhook"} 0
+n8n_workflow_execution_duration_seconds_bucket{le="0.01",status="success",mode="webhook"} 0
+n8n_workflow_execution_duration_seconds_bucket{le="0.025",status="success",mode="webhook"} 0
+n8n_workflow_execution_duration_seconds_bucket{le="0.05",status="success",mode="webhook"} 0
+n8n_workflow_execution_duration_seconds_bucket{le="0.1",status="success",mode="webhook"} 0
+n8n_workflow_execution_duration_seconds_bucket{le="0.25",status="success",mode="webhook"} 0
+n8n_workflow_execution_duration_seconds_bucket{le="0.5",status="success",mode="webhook"} 0
+n8n_workflow_execution_duration_seconds_bucket{le="1",status="success",mode="webhook"} 832
+n8n_workflow_execution_duration_seconds_bucket{le="2.5",status="success",mode="webhook"} 2223
+n8n_workflow_execution_duration_seconds_bucket{le="5",status="success",mode="webhook"} 2244
+n8n_workflow_execution_duration_seconds_bucket{le="10",status="success",mode="webhook"} 2244
+n8n_workflow_execution_duration_seconds_bucket{le="30",status="success",mode="webhook"} 2244
+n8n_workflow_execution_duration_seconds_bucket{le="60",status="success",mode="webhook"} 2244
+n8n_workflow_execution_duration_seconds_bucket{le="120",status="success",mode="webhook"} 2244
+n8n_workflow_execution_duration_seconds_bucket{le="300",status="success",mode="webhook"} 2244
+n8n_workflow_execution_duration_seconds_bucket{le="600",status="success",mode="webhook"} 2244
+n8n_workflow_execution_duration_seconds_bucket{le="+Inf",status="success",mode="webhook"} 2244
+n8n_workflow_execution_duration_seconds_sum{status="success",mode="webhook"} 3029.222000000003
+n8n_workflow_execution_duration_seconds_count{status="success",mode="webhook"} 2244
+
+# HELP n8n_process_pss_bytes Proportional Set Size of the process in bytes.
+# TYPE n8n_process_pss_bytes gauge
+n8n_process_pss_bytes 616617984
+
+# HELP n8n_version_info n8n version info.
+# TYPE n8n_version_info gauge
+n8n_version_info{version="v2.40.7",major="2",minor="40",patch="7"} 1
+
+# HELP n8n_process_cpu_user_seconds_total Total user CPU time spent in seconds.
+# TYPE n8n_process_cpu_user_seconds_total counter
+n8n_process_cpu_user_seconds_total 235.504299
+
+# HELP n8n_process_cpu_system_seconds_total Total system CPU time spent in seconds.
+# TYPE n8n_process_cpu_system_seconds_total counter
+n8n_process_cpu_system_seconds_total 48.753506
+
+# HELP n8n_process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE n8n_process_cpu_seconds_total counter
+n8n_process_cpu_seconds_total 284.257805
+
+# HELP n8n_process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE n8n_process_start_time_seconds gauge
+n8n_process_start_time_seconds 1794373279
+
+# HELP n8n_process_resident_memory_bytes Resident memory size in bytes.
+# TYPE n8n_process_resident_memory_bytes gauge
+n8n_process_resident_memory_bytes 621334528
+
+# HELP n8n_process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE n8n_process_virtual_memory_bytes gauge
+n8n_process_virtual_memory_bytes 19955040256
+
+# HELP n8n_process_heap_bytes Process heap size in bytes.
+# TYPE n8n_process_heap_bytes gauge
+n8n_process_heap_bytes 7620386816
+
+# HELP n8n_process_open_fds Number of open file descriptors.
+# TYPE n8n_process_open_fds gauge
+n8n_process_open_fds 29
+
+# HELP n8n_process_max_fds Maximum number of open file descriptors.
+# TYPE n8n_process_max_fds gauge
+n8n_process_max_fds 524288
+
+# HELP n8n_nodejs_eventloop_lag_seconds Lag of event loop in seconds.
+# TYPE n8n_nodejs_eventloop_lag_seconds gauge
+n8n_nodejs_eventloop_lag_seconds 0.007722953
+
+# HELP n8n_nodejs_eventloop_lag_min_seconds The minimum recorded event loop delay.
+# TYPE n8n_nodejs_eventloop_lag_min_seconds gauge
+n8n_nodejs_eventloop_lag_min_seconds 0.008822784
+
+# HELP n8n_nodejs_eventloop_lag_max_seconds The maximum recorded event loop delay.
+# TYPE n8n_nodejs_eventloop_lag_max_seconds gauge
+n8n_nodejs_eventloop_lag_max_seconds 0.146276351
+
+# HELP n8n_nodejs_eventloop_lag_mean_seconds The mean of the recorded event loop delays.
+# TYPE n8n_nodejs_eventloop_lag_mean_seconds gauge
+n8n_nodejs_eventloop_lag_mean_seconds 0.010603901248936095
+
+# HELP n8n_nodejs_eventloop_lag_stddev_seconds The standard deviation of the recorded event loop delays.
+# TYPE n8n_nodejs_eventloop_lag_stddev_seconds gauge
+n8n_nodejs_eventloop_lag_stddev_seconds 0.0024131865486650113
+
+# HELP n8n_nodejs_eventloop_lag_p50_seconds The 50th percentile of the recorded event loop delays.
+# TYPE n8n_nodejs_eventloop_lag_p50_seconds gauge
+n8n_nodejs_eventloop_lag_p50_seconds 0.010133503
+
+# HELP n8n_nodejs_eventloop_lag_p90_seconds The 90th percentile of the recorded event loop delays.
+# TYPE n8n_nodejs_eventloop_lag_p90_seconds gauge
+n8n_nodejs_eventloop_lag_p90_seconds 0.011255807
+
+# HELP n8n_nodejs_eventloop_lag_p99_seconds The 99th percentile of the recorded event loop delays.
+# TYPE n8n_nodejs_eventloop_lag_p99_seconds gauge
+n8n_nodejs_eventloop_lag_p99_seconds 0.020971519
+
+# HELP n8n_nodejs_active_resources Number of active resources that are currently keeping the event loop alive, grouped by async resource type.
+# TYPE n8n_nodejs_active_resources gauge
+n8n_nodejs_active_resources{type="PipeWrap"} 2
+n8n_nodejs_active_resources{type="TCPSocketWrap"} 5
+n8n_nodejs_active_resources{type="TCPServerWrap"} 2
+n8n_nodejs_active_resources{type="Timeout"} 26
+n8n_nodejs_active_resources{type="Immediate"} 1
+
+# HELP n8n_nodejs_active_resources_total Total number of active resources.
+# TYPE n8n_nodejs_active_resources_total gauge
+n8n_nodejs_active_resources_total 36
+
+# HELP n8n_nodejs_active_handles Number of active libuv handles grouped by handle type. Every handle type is C++ class name.
+# TYPE n8n_nodejs_active_handles gauge
+n8n_nodejs_active_handles{type="Socket"} 7
+n8n_nodejs_active_handles{type="Server"} 2
+
+# HELP n8n_nodejs_active_handles_total Total number of active handles.
+# TYPE n8n_nodejs_active_handles_total gauge
+n8n_nodejs_active_handles_total 9
+
+# HELP n8n_nodejs_active_requests Number of active libuv requests grouped by request type. Every request type is C++ class name.
+# TYPE n8n_nodejs_active_requests gauge
+
+# HELP n8n_nodejs_active_requests_total Total number of active requests.
+# TYPE n8n_nodejs_active_requests_total gauge
+n8n_nodejs_active_requests_total 0
+
+# HELP n8n_nodejs_heap_size_total_bytes Process heap size from Node.js in bytes.
+# TYPE n8n_nodejs_heap_size_total_bytes gauge
+n8n_nodejs_heap_size_total_bytes 312553472
+
+# HELP n8n_nodejs_heap_size_used_bytes Process heap size used from Node.js in bytes.
+# TYPE n8n_nodejs_heap_size_used_bytes gauge
+n8n_nodejs_heap_size_used_bytes 210236336
+
+# HELP n8n_nodejs_external_memory_bytes Node.js external memory size in bytes.
+# TYPE n8n_nodejs_external_memory_bytes gauge
+n8n_nodejs_external_memory_bytes 41707719
+
+# HELP n8n_nodejs_heap_space_size_total_bytes Process heap space size total from Node.js in bytes.
+# TYPE n8n_nodejs_heap_space_size_total_bytes gauge
+n8n_nodejs_heap_space_size_total_bytes{space="read_only"} 0
+n8n_nodejs_heap_space_size_total_bytes{space="new"} 54788096
+n8n_nodejs_heap_space_size_total_bytes{space="old"} 223608832
+n8n_nodejs_heap_space_size_total_bytes{space="code"} 11010048
+n8n_nodejs_heap_space_size_total_bytes{space="shared"} 0
+n8n_nodejs_heap_space_size_total_bytes{space="trusted"} 11010048
+n8n_nodejs_heap_space_size_total_bytes{space="shared_trusted"} 0
+n8n_nodejs_heap_space_size_total_bytes{space="new_large_object"} 0
+n8n_nodejs_heap_space_size_total_bytes{space="large_object"} 11980800
+n8n_nodejs_heap_space_size_total_bytes{space="code_large_object"} 155648
+n8n_nodejs_heap_space_size_total_bytes{space="shared_large_object"} 0
+n8n_nodejs_heap_space_size_total_bytes{space="shared_trusted_large_object"} 0
+n8n_nodejs_heap_space_size_total_bytes{space="trusted_large_object"} 0
+
+# HELP n8n_nodejs_heap_space_size_used_bytes Process heap space size used from Node.js in bytes.
+# TYPE n8n_nodejs_heap_space_size_used_bytes gauge
+n8n_nodejs_heap_space_size_used_bytes{space="read_only"} 0
+n8n_nodejs_heap_space_size_used_bytes{space="new"} 5707400
+n8n_nodejs_heap_space_size_used_bytes{space="old"} 173974640
+n8n_nodejs_heap_space_size_used_bytes{space="code"} 9004864
+n8n_nodejs_heap_space_size_used_bytes{space="shared"} 0
+n8n_nodejs_heap_space_size_used_bytes{space="trusted"} 9515888
+n8n_nodejs_heap_space_size_used_bytes{space="shared_trusted"} 0
+n8n_nodejs_heap_space_size_used_bytes{space="new_large_object"} 0
+n8n_nodejs_heap_space_size_used_bytes{space="large_object"} 11891888
+n8n_nodejs_heap_space_size_used_bytes{space="code_large_object"} 152640
+n8n_nodejs_heap_space_size_used_bytes{space="shared_large_object"} 0
+n8n_nodejs_heap_space_size_used_bytes{space="shared_trusted_large_object"} 0
+n8n_nodejs_heap_space_size_used_bytes{space="trusted_large_object"} 0
+
+# HELP n8n_nodejs_heap_space_size_available_bytes Process heap space size available from Node.js in bytes.
+# TYPE n8n_nodejs_heap_space_size_available_bytes gauge
+n8n_nodejs_heap_space_size_available_bytes{space="read_only"} 0
+n8n_nodejs_heap_space_size_available_bytes{space="new"} 27844984
+n8n_nodejs_heap_space_size_available_bytes{space="old"} 49112472
+n8n_nodejs_heap_space_size_available_bytes{space="code"} 2003840
+n8n_nodejs_heap_space_size_available_bytes{space="shared"} 0
+n8n_nodejs_heap_space_size_available_bytes{space="trusted"} 1472192
+n8n_nodejs_heap_space_size_available_bytes{space="shared_trusted"} 0
+n8n_nodejs_heap_space_size_available_bytes{space="new_large_object"} 33554432
+n8n_nodejs_heap_space_size_available_bytes{space="large_object"} 0
+n8n_nodejs_heap_space_size_available_bytes{space="code_large_object"} 0
+n8n_nodejs_heap_space_size_available_bytes{space="shared_large_object"} 0
+n8n_nodejs_heap_space_size_available_bytes{space="shared_trusted_large_object"} 0
+n8n_nodejs_heap_space_size_available_bytes{space="trusted_large_object"} 0
+
+# HELP n8n_nodejs_version_info Node.js version info.
+# TYPE n8n_nodejs_version_info gauge
+n8n_nodejs_version_info{version="v26.7.0",major="26",minor="7",patch="0"} 1
+
+# HELP n8n_nodejs_gc_duration_seconds Garbage collection duration by kind, one of major, minor, incremental or weakcb.
+# TYPE n8n_nodejs_gc_duration_seconds histogram
+n8n_nodejs_gc_duration_seconds_bucket{le="0.001",kind="minor"} 5
+n8n_nodejs_gc_duration_seconds_bucket{le="0.01",kind="minor"} 336
+n8n_nodejs_gc_duration_seconds_bucket{le="0.1",kind="minor"} 348
+n8n_nodejs_gc_duration_seconds_bucket{le="1",kind="minor"} 348
+n8n_nodejs_gc_duration_seconds_bucket{le="2",kind="minor"} 348
+n8n_nodejs_gc_duration_seconds_bucket{le="5",kind="minor"} 348
+n8n_nodejs_gc_duration_seconds_bucket{le="+Inf",kind="minor"} 348
+n8n_nodejs_gc_duration_seconds_sum{kind="minor"} 1.4322844269983468
+n8n_nodejs_gc_duration_seconds_count{kind="minor"} 348
+n8n_nodejs_gc_duration_seconds_bucket{le="0.001",kind="incremental"} 0
+n8n_nodejs_gc_duration_seconds_bucket{le="0.01",kind="incremental"} 13
+n8n_nodejs_gc_duration_seconds_bucket{le="0.1",kind="incremental"} 13
+n8n_nodejs_gc_duration_seconds_bucket{le="1",kind="incremental"} 13
+n8n_nodejs_gc_duration_seconds_bucket{le="2",kind="incremental"} 13
+n8n_nodejs_gc_duration_seconds_bucket{le="5",kind="incremental"} 13
+n8n_nodejs_gc_duration_seconds_bucket{le="+Inf",kind="incremental"} 13
+n8n_nodejs_gc_duration_seconds_sum{kind="incremental"} 0.03181521299993619
+n8n_nodejs_gc_duration_seconds_count{kind="incremental"} 13
+n8n_nodejs_gc_duration_seconds_bucket{le="0.001",kind="major"} 0
+n8n_nodejs_gc_duration_seconds_bucket{le="0.01",kind="major"} 0
+n8n_nodejs_gc_duration_seconds_bucket{le="0.1",kind="major"} 12
+n8n_nodejs_gc_duration_seconds_bucket{le="1",kind="major"} 14
+n8n_nodejs_gc_duration_seconds_bucket{le="2",kind="major"} 14
+n8n_nodejs_gc_duration_seconds_bucket{le="5",kind="major"} 14
+n8n_nodejs_gc_duration_seconds_bucket{le="+Inf",kind="major"} 14
+n8n_nodejs_gc_duration_seconds_sum{kind="major"} 0.6861848070002161
+n8n_nodejs_gc_duration_seconds_count{kind="major"} 14
+
+# HELP n8n_token_exchange_requests_total Total number of token exchange requests.
+# TYPE n8n_token_exchange_requests_total counter
+n8n_token_exchange_requests_total{result="success"} 0
+n8n_token_exchange_requests_total{result="failure"} 0
+
+# HELP n8n_token_exchange_failures_total Total number of token exchange failures broken down by reason.
+# TYPE n8n_token_exchange_failures_total counter
+
+# HELP n8n_embed_login_requests_total Total number of embed login requests.
+# TYPE n8n_embed_login_requests_total counter
+n8n_embed_login_requests_total{result="success"} 0
+n8n_embed_login_requests_total{result="failure"} 0
+
+# HELP n8n_embed_login_failures_total Total number of embed login failures broken down by reason.
+# TYPE n8n_embed_login_failures_total counter
+
+# HELP n8n_token_exchange_jit_provisioning_total Total number of users JIT-provisioned via token exchange.
+# TYPE n8n_token_exchange_jit_provisioning_total counter
+n8n_token_exchange_jit_provisioning_total 0
+
+# HELP n8n_token_exchange_identity_linked_total Total number of external identities linked to existing users via token exchange.
+# TYPE n8n_token_exchange_identity_linked_total counter
+n8n_token_exchange_identity_linked_total 0
+
+# HELP n8n_instance_ai_runs_total Total number of Instance AI runs.
+# TYPE n8n_instance_ai_runs_total counter
+
+# HELP n8n_instance_ai_run_duration_seconds Instance AI run duration in seconds.
+# TYPE n8n_instance_ai_run_duration_seconds histogram
+
+# HELP n8n_instance_ai_tool_calls_total Total number of tool calls made during Instance AI runs.
+# TYPE n8n_instance_ai_tool_calls_total counter
+n8n_instance_ai_tool_calls_total 0
+
+# HELP n8n_instance_ai_tool_errors_total Total number of failed tool calls during Instance AI runs.
+# TYPE n8n_instance_ai_tool_errors_total counter
+n8n_instance_ai_tool_errors_total 0
+
+# HELP n8n_instance_ai_tokens_total Total number of tokens used by Instance AI runs.
+# TYPE n8n_instance_ai_tokens_total counter
+n8n_instance_ai_tokens_total{type="input"} 0
+n8n_instance_ai_tokens_total{type="output"} 0
+
+# HELP n8n_instance_ai_cost_usd_total Total estimated cost in USD of Instance AI runs (models.dev pricing).
+# TYPE n8n_instance_ai_cost_usd_total counter
+n8n_instance_ai_cost_usd_total 0
+
+# HELP n8n_instance_ai_runs_refused_total Instance AI runs refused by a concurrency cap, by reason.
+# TYPE n8n_instance_ai_runs_refused_total counter
+n8n_instance_ai_runs_refused_total{reason="user_run_limit"} 0
+n8n_instance_ai_runs_refused_total{reason="instance_run_limit"} 0
+
+# HELP n8n_instance_ai_active_runs Number of Instance AI runs currently executing.
+# TYPE n8n_instance_ai_active_runs gauge
+n8n_instance_ai_active_runs 0
+
+# HELP n8n_instance_ai_durable_log_rows_total Durable Instance AI event rows appended (structural facts + coalesced blocks).
+# TYPE n8n_instance_ai_durable_log_rows_total counter
+n8n_instance_ai_durable_log_rows_total 0
+
+# HELP n8n_instance_ai_durable_log_bytes_total Serialized payload bytes appended to the durable Instance AI event log.
+# TYPE n8n_instance_ai_durable_log_bytes_total counter
+n8n_instance_ai_durable_log_bytes_total 0
+
+# HELP n8n_instance_ai_durable_log_queue_latency_seconds Time from event publish to durable batch persistence, per event.
+# TYPE n8n_instance_ai_durable_log_queue_latency_seconds histogram
+n8n_instance_ai_durable_log_queue_latency_seconds_bucket{le="0.001"} 0
+n8n_instance_ai_durable_log_queue_latency_seconds_bucket{le="0.005"} 0
+n8n_instance_ai_durable_log_queue_latency_seconds_bucket{le="0.01"} 0
+n8n_instance_ai_durable_log_queue_latency_seconds_bucket{le="0.05"} 0
+n8n_instance_ai_durable_log_queue_latency_seconds_bucket{le="0.1"} 0
+n8n_instance_ai_durable_log_queue_latency_seconds_bucket{le="0.5"} 0
+n8n_instance_ai_durable_log_queue_latency_seconds_bucket{le="1"} 0
+n8n_instance_ai_durable_log_queue_latency_seconds_bucket{le="5"} 0
+n8n_instance_ai_durable_log_queue_latency_seconds_bucket{le="+Inf"} 0
+n8n_instance_ai_durable_log_queue_latency_seconds_sum 0
+n8n_instance_ai_durable_log_queue_latency_seconds_count 0
+
+# HELP n8n_instance_ai_durable_log_append_conflicts_total Retried (threadId, seq) append collisions between concurrent writers.
+# TYPE n8n_instance_ai_durable_log_append_conflicts_total counter
+n8n_instance_ai_durable_log_append_conflicts_total 0
+
+# HELP n8n_instance_ai_durable_log_append_failures_total Durable-log batches dropped after exhausting append retries.
+# TYPE n8n_instance_ai_durable_log_append_failures_total counter
+n8n_instance_ai_durable_log_append_failures_total 0
+
+# HELP n8n_instance_ai_durable_log_replays_total SSE reconnects that served a replay from the durable event log.
+# TYPE n8n_instance_ai_durable_log_replays_total counter
+n8n_instance_ai_durable_log_replays_total 0
+
+# HELP n8n_instance_ai_durable_log_replay_cursor_age_events How many events behind the log head a reconnecting cursor was.
+# TYPE n8n_instance_ai_durable_log_replay_cursor_age_events histogram
+n8n_instance_ai_durable_log_replay_cursor_age_events_bucket{le="1"} 0
+n8n_instance_ai_durable_log_replay_cursor_age_events_bucket{le="5"} 0
+n8n_instance_ai_durable_log_replay_cursor_age_events_bucket{le="25"} 0
+n8n_instance_ai_durable_log_replay_cursor_age_events_bucket{le="100"} 0
+n8n_instance_ai_durable_log_replay_cursor_age_events_bucket{le="500"} 0
+n8n_instance_ai_durable_log_replay_cursor_age_events_bucket{le="+Inf"} 0
+n8n_instance_ai_durable_log_replay_cursor_age_events_sum 0
+n8n_instance_ai_durable_log_replay_cursor_age_events_count 0
+
+# HELP n8n_instance_ai_history_fold_duration_seconds Latency of deriving history agent trees by folding the durable log.
+# TYPE n8n_instance_ai_history_fold_duration_seconds histogram
+n8n_instance_ai_history_fold_duration_seconds_bucket{le="0.001"} 0
+n8n_instance_ai_history_fold_duration_seconds_bucket{le="0.005"} 0
+n8n_instance_ai_history_fold_duration_seconds_bucket{le="0.01"} 0
+n8n_instance_ai_history_fold_duration_seconds_bucket{le="0.05"} 0
+n8n_instance_ai_history_fold_duration_seconds_bucket{le="0.1"} 0
+n8n_instance_ai_history_fold_duration_seconds_bucket{le="0.5"} 0
+n8n_instance_ai_history_fold_duration_seconds_bucket{le="+Inf"} 0
+n8n_instance_ai_history_fold_duration_seconds_sum 0
+n8n_instance_ai_history_fold_duration_seconds_count 0
+
+# HELP n8n_instance_ai_runs_swept_total Crashed Instance AI runs resolved by the interrupted-run sweep.
+# TYPE n8n_instance_ai_runs_swept_total counter
+n8n_instance_ai_runs_swept_total{outcome="interrupted"} 0
+n8n_instance_ai_runs_swept_total{outcome="crash-resumed"} 0

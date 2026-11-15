@@ -1,0 +1,34 @@
+label=q4-r5
+load_seconds=183
+requests=901
+ok=897
+errors=4
+exec_per_min=294.1
+p50_ms=882
+p95_ms=1025
+p99_ms=3781
+max_ms=5513
+dropped_iterations=0
+  task-runner  containers=5 cpu_avg_pct=88.1 cpu_peak_pct=393.1 mem_peak_mib=453.6 mem_idle_mib=32.6 oom_kills=0
+  n8n-main     containers=1 cpu_avg_pct=14.8 cpu_peak_pct=74.0 mem_peak_mib=442.6 mem_idle_mib=337.7 oom_kills=0
+  postgres     containers=1 cpu_avg_pct=13.2 cpu_peak_pct=29.1 mem_peak_mib=147.6 mem_idle_mib=130.6 oom_kills=0
+  probe        containers=2 cpu_avg_pct=2.1 cpu_peak_pct=15.2 mem_peak_mib=8.0 mem_idle_mib=1.1 oom_kills=0
+  n8n-worker   containers=4 cpu_avg_pct=75.8 cpu_peak_pct=259.5 mem_peak_mib=1160.9 mem_idle_mib=883.7 oom_kills=0
+  redis        containers=1 cpu_avg_pct=3.1 cpu_peak_pct=8.1 mem_peak_mib=8.2 mem_idle_mib=4.3 oom_kills=0
+stack_mem_peak_mib=2080
+stack_mem_idle_mib=1390
+stack_cpu_avg_pct=197
+host_mem_peak_mib=2920
+editor_idle_ms=365
+editor_load_p50_ms=372
+editor_load_p95_ms=418
+editor_load_max_ms=557
+editor_errors=0
+pg_conns_max=12
+pg_conns_idle=8
+pg_active_max=3
+exec_tables_mib_end=3.0
+executions_rows_end=907
+redis_mb_max=2.61
+redis_mb_idle=2.37
+queue_wait_max=0

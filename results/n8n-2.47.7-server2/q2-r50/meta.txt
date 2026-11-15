@@ -1,0 +1,9 @@
+label=v2477-q2-r50
+workflow=q1
+base_url=http://SERVER_IP:5704
+scenario_start=1794737536
+started_utc=2026-11-15T10:17:47Z
+k6_args=-e MODE=rate -e RATE=50 -e DURATION=3m -e MAX_VUS=1000
+load_start=1794737888
+load_end=1794738100
+ended_utc=2026-11-15T10:22:18Z

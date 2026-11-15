@@ -1,0 +1,51 @@
+{
+  "name": "QBIN2 read binary bytes",
+  "nodes": [
+    {
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "qbin2-0000-4000-8000-000000000000",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "qbin2",
+        "responseMode": "lastNode",
+        "options": {
+          "binaryPropertyName": "data"
+        }
+      }
+    },
+    {
+      "name": "Read bytes",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const key = Object.keys($input.first().binary || {})[0];\nif (!key) return [{ json: { error: 'no binary on the item' } }];\nconst meta = $input.first().binary[key];\nconst buf = await this.helpers.getBinaryDataBuffer(0, key);\nreturn [{ json: { key, id: meta.id, metaBytes: meta.bytes, readBytes: buf.length } }];\n"
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Read bytes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

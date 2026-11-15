@@ -1,0 +1,21 @@
+
+     ✓ status 200
+
+     checks.........................: 100.00% ✓ 901     ✗ 0   
+     data_received..................: 479 kB  2.6 kB/s
+     data_sent......................: 135 kB  741 B/s
+     http_req_blocked...............: min=152.13ms med=160.35ms avg=173.85ms p(90)=164.85ms p(95)=168.78ms p(99)=541.34ms max=1.07s 
+     http_req_connecting............: min=152.05ms med=160.16ms avg=173.66ms p(90)=164.58ms p(95)=168.54ms p(99)=541.07ms max=1.07s 
+     http_req_duration..............: min=830.83ms med=871.96ms avg=978.89ms p(90)=1.22s    p(95)=1.63s    p(99)=2.74s    max=3.21s 
+       { expected_response:true }...: min=830.83ms med=871.96ms avg=978.89ms p(90)=1.22s    p(95)=1.63s    p(99)=2.74s    max=3.21s 
+     http_req_failed................: 0.00%   ✓ 0       ✗ 901 
+     http_req_receiving.............: min=16µs     med=108µs    avg=163.04µs p(90)=290µs    p(95)=402µs    p(99)=838µs    max=2.47ms
+     http_req_sending...............: min=24µs     med=132µs    avg=228.13µs p(90)=418µs    p(95)=578µs    p(99)=968µs    max=6.89ms
+     http_req_tls_handshaking.......: min=0s       med=0s       avg=0s       p(90)=0s       p(95)=0s       p(99)=0s       max=0s    
+     http_req_waiting...............: min=830.55ms med=871.74ms avg=978.5ms  p(90)=1.22s    p(95)=1.63s    p(99)=2.74s    max=3.21s 
+     http_reqs......................: 901     4.94257/s
+     iteration_duration.............: min=985.28ms med=1.03s    avg=1.15s    p(90)=1.41s    p(95)=1.88s    p(99)=2.9s     max=3.37s 
+     iterations.....................: 901     4.94257/s
+     vus............................: 50      min=50    max=50
+     vus_max........................: 50      min=50    max=50
+
